@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 2px solid black;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background: orange;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "nav"
+                        "left-aside"
+                        "contentArea"
+                        "right-aside"
+                        "footer";
+}
+
+.nav {
+    width: 100%;
+    background: cadetblue;
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-side {
+    background: red;
+    grid-area: left-aside;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    background: rgb(255, 0, 128);
+    grid-area: contentArea;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-side {
+    background: red;
+    grid-area: right-aside;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    background: purple;
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media screen and (min-width: 640px) {
+
+    .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(5, auto);
+
+        grid-template-areas: "nav nav"
+                            "left-aside right-aside"
+                            "contentArea contentArea"
+                            "contentArea contentArea"
+                            "footer footer";
+    }
+    
+}
+
+@media screen and (min-width: 1024px) {
+
+    .container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(5, auto);
+
+        grid-template-areas: "nav nav nav nav"
+                            "left-aside contentArea contentArea right-aside"
+                            "left-aside contentArea contentArea right-aside"
+                            "left-aside contentArea contentArea right-aside"
+                            "footer footer footer footer";
+    }
+    
+}
